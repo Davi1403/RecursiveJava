@@ -184,6 +184,8 @@ public class Ex8 {
     }
 }
 
+---------------------------------------------------------------------------------------------------------------------------
+
 9-)
 
 public class Ex10 {
@@ -201,5 +203,154 @@ public class Ex10 {
         System.out.println(aux.somaImpares(5    ));
     }
 }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+10-)
+
+    public double somaImpares(int n){
+
+        if (n == 1) return 1    ;
+        else {
+            return (2 * n - 1) + somaImpares(n - 1);
+        }
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+11-)
+
+    public int mod(int n, int m){
+        if (n < m) return n;
+        else{
+            return mod(n - m , m);
+        }
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+12-)
+
+    public String hex(int n){
+        if (n<=16) {
+            return String.valueOf(n);}
+        else {
+            int resto = n%16;
+            char charHex = ' ';
+            if (resto>9){
+                charHex = (char) ('A' + resto - 10);
+            }else {
+                charHex = (char) n;
+            }
+
+            return String.valueOf(hex(n/16) + charHex);
+        }
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+13-)
+
+    public int fatorial(int n){
+        if (n == 1) return 1;
+        else {
+            return n * fatorial(n-1);
+        }
+    }
+
+    public int f(int x){
+        if (x%3 == 0) return x * x;
+        if (x%3 == 1) return x + 3;
+        if (x%3 == 2) return fatorial(x);
+        else return 0;
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+14-)
+
+a-) 
+
+Soluções triviais são casos no qual a função retorna um valor direto (resposta final), sem a necessidade de utulizar a recursividade novamente. Neste exeplo as soluções trivias são:
+
+if ( base > limit ) return -1;
+
+if ( base == limit ) return 1;
+
+Nestes dois casos o valor retornado é direto e não chama a função puzzle.
+
+b-)
+
+A chamada ocorre em:
+
+else return base * puzzle(base + 1, limit);
+
+A chamada recursiva só ocorre quando as soluções treviais não são aceitas, ou seja somente quando (base < limit).
+
+c-)
+
+    a.
+
+    puzzle (14,10)
+
+    puzzle (14,10) = -1
+
+    b.
+
+    puzzle (4,7) 
+    
+    puzzle(4,7) =  4 * puzzle(5,7) = 120
+
+    puzzle(5,7) = 5 * puzzle(6,7) = 30
+
+    puzzle(6,7) = 6 * puzzle(7,7) = 6
+
+    puzzle(7,7) = 1
+    
+    puzzle (4,7) = 120
+
+    c.
+
+    puzzle (0,0) = 1
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+15-)
+
+    public double sum (double n){
+        if (n == 1) return 1;
+        else{
+            return 1/n + sum(n-1);
+        }
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+16-)
+
+    public double S (double B){
+        
+        if (n == 1) return 1;
+        if (n%2 == 0) return 1/n + S(n-1);
+        else return 1/n - S(n-1);
+    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+17-)
+    
+    f (3) = 3 * 3 = 9
+    
+    f (7) = 2 * F(3) + 5
+    f (7) = 2 * 9 + 5 = 23
+    
+
+
+     
+
+
+
+
 
 
